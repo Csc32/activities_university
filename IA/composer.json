@@ -1,0 +1,11 @@
+{
+    "name": "carlos/ia",
+    "type": "project",
+    "authors": [
+        {
+            "name": "csc32",
+            "email": "sanzonettycar@gmail.com"
+        }
+    ],
+    "require": {}
+}
