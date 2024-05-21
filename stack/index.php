@@ -17,7 +17,7 @@ class Stack
     $totalLap = 1;
     while (true) {
       print("Vuelta numero: $totalLap \n");
-      if($totalLap == $this->finishLap){
+      if ($totalLap == $this->finishLap) {
         $el = readline("Ingrese un elemento: \n");
         if (!$this->validateElement($el)) {
           print("\n Ingrese un elemento valido\n");
@@ -48,15 +48,17 @@ class Stack
   }
   public function remove()
   {
-    $total = count(self::$stack);
-
-    $dataRemoved = self::$stack[$total - 1];
-    unset(self::$stack[$total - 1]);
-
-    return $dataRemoved;
+  for ($i = count(self::$stack) - 1; $i >= 0; $i--) {
+        print("[$i]" . " ");
+        
+        $dataRemoved = array_pop(self::$stack); 
+        
+        print("Elemento eliminado: $dataRemoved\n");
+    }
   }
 
-  public function show(){
+  public function show()
+  {
     return print_r(self::$stack);
   }
 }
@@ -64,6 +66,4 @@ class Stack
 $test = new Stack();
 $test->insertElement();
 $test->show();
-$test2 = new Stack(1, 100);
-$test2->insertElement();
-$test2->show();
+$test->remove();
